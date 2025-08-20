@@ -84,17 +84,5 @@ if not feedback_data.empty:
         file_name='client_feedback.csv',
         mime='text/csv',
     )
-
-    # Download as Excel
-    excel_file = "client_feedback.xlsx"
-    feedback_data.to_excel(excel_file, index=False)
-
-    with open(excel_file, "rb") as f:
-        st.download_button(
-            label="⬇️ Download as Excel",
-            data=f,
-            file_name="client_feedback.xlsx",
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        )
 else:
     st.info("No feedback submitted yet. Submissions will appear here for download.")
